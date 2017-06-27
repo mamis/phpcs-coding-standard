@@ -20,6 +20,11 @@
         <severity>0</severity>
     </rule>
 
+    <!-- Ignore YodaConditions -->
+    <rule ref="Symfony.ControlStructure.YodaConditions">
+        <severity>0</severity>
+    </rule>
+
     <!-- Enforce 1 space between concatenation and allow new lines -->
     <rule ref="Squiz.Strings.ConcatenationSpacing">
         <properties>
