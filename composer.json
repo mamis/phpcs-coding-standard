@@ -1,0 +1,27 @@
+{
+    "name": "mamis/phpcs-coding-standard",
+    "type": "phpcs-coding-standards",
+    "description": "Mamis CodeSniffer ruleset for PHP Applications",
+    "keywords": ["Mamis", "Coding Standard", "phpcs"],
+    "homepage": "https://github.com/mamis/phpcs-coding-standard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Muscat",
+            "email": "matthew@mamis.com.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "squizlabs/php_codesniffer": "3.*",
+        "escapestudios/symfony2-coding-standard": "3.x-dev"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "vendor/bin/phpcs --config-set colors 1",
+            "vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard",
+            "vendor/bin/phpcs --config-set installed_paths vendor/mamis/phpcs-coding-standard",
+            "vendor/bin/phpcs --config-set default_standard Mamis"
+        ]
+    }
+}
