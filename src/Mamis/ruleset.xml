@@ -30,6 +30,11 @@
         <severity>0</severity>
     </rule>
 
+    <!-- Relax Symfony Rules on identical comparisons -->
+    <rule ref="Symfony.ControlStructure.IdenticalComparison.Warning">
+        <severity>0</severity>
+    </rule>
+
     <!-- Enforce 1 space between concatenation and allow new lines -->
     <rule ref="Squiz.Strings.ConcatenationSpacing">
         <properties>
