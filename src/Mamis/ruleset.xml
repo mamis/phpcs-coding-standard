@@ -43,6 +43,11 @@
         </properties>
     </rule>
 
+    <!-- Ignore laravel db migrations requiring a namespace -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>*/database/migrations/*</exclude-pattern>
+    </rule>
+
     <!-- Ignore Squiz Control Signatures - we use the Symfony Coding Standard -->
     <!-- @TODO: Implement in Symfony Standard -->
     <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace">
