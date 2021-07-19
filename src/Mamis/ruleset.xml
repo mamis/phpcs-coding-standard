@@ -43,6 +43,17 @@
         </properties>
     </rule>
 
+    <!-- Ignore ValidClassName rules for Interface, Trait and Abstract classes -->
+    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidAbstractName">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidTraitName">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidInterfaceName">
+        <severity>0</severity>
+    </rule>
+
     <!-- Ignore laravel db migrations requiring a namespace -->
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <exclude-pattern>*/database/migrations/*</exclude-pattern>
