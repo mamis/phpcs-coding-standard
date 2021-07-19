@@ -54,6 +54,11 @@
         <severity>0</severity>
     </rule>
 
+    <!-- Ignore multi-line function arguments -->
+    <rule ref="Symfony.Functions.Arguments.Invalid">
+        <severity>0</severity>
+    </rule>
+
     <!-- Ignore laravel db migrations requiring a namespace -->
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <exclude-pattern>*/database/migrations/*</exclude-pattern>
