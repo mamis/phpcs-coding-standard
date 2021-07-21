@@ -3,36 +3,21 @@
     <description>The Mamis coding standard.</description>
 
     <!-- Include the whole Symfony Standard -->
-    <rule ref="Symfony"/>
+    <rule ref="Symfony">
+        <exclude name="Symfony.Commenting.ClassComment"/>
+        <exclude name="Symfony.Commenting.FunctionComment"/>
+        <exclude name="Symfony.Commenting.License"/>
+        <exclude name="Symfony.Commenting.Annotations"/>
+        <exclude name="Symfony.ControlStructure.YodaConditions"/>
+        <exclude name="Symfony.ControlStructure.IdenticalComparison.Warning"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidAbstractName"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidTraitName"/>
+        <exclude name="Symfony.NamingConventions.ValidClassName.InvalidInterfaceName"/>
+        <exclude name="Symfony.Functions.Arguments.Invalid"/>
 
-    <!-- Ignore missing class comments -->
-    <rule ref="Symfony.Commenting.ClassComment">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore missing function comments -->
-    <rule ref="Symfony.Commenting.FunctionComment">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore missing license comments -->
-    <rule ref="Symfony.Commenting.License">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore commenting annotations -->
-    <rule ref="Symfony.Commenting.Annotations">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore YodaConditions -->
-    <rule ref="Symfony.ControlStructure.YodaConditions">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Relax Symfony Rules on identical comparisons -->
-    <rule ref="Symfony.ControlStructure.IdenticalComparison.Warning">
-        <severity>0</severity>
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
+        <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+        <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
     </rule>
 
     <!-- Enforce 1 space between concatenation and allow new lines -->
@@ -43,36 +28,8 @@
         </properties>
     </rule>
 
-    <!-- Ignore ValidClassName rules for Interface, Trait and Abstract classes -->
-    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidAbstractName">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidTraitName">
-        <severity>0</severity>
-    </rule>
-    <rule ref="Symfony.NamingConventions.ValidClassName.InvalidInterfaceName">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Ignore multi-line function arguments -->
-    <rule ref="Symfony.Functions.Arguments.Invalid">
-        <severity>0</severity>
-    </rule>
-
     <!-- Ignore laravel db migrations requiring a namespace -->
     <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
         <exclude-pattern>*/database/migrations/*</exclude-pattern>
-    </rule>
-
-    <!-- Ignore Squiz Control Signatures - we use the Symfony Coding Standard -->
-    <!-- @TODO: Implement in Symfony Standard -->
-    <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace">
-        <severity>0</severity>
-    </rule>
-
-    <!-- Excluded variable name checks to avoid errors on member properties -->
-    <!-- @TODO: Move exclude to apply only on member variables -->
-    <rule ref="Zend.NamingConventions.ValidVariableName.NotCamelCaps">
-        <severity>0</severity>
     </rule>
 </ruleset>
